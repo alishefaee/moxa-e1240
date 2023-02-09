@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "fc53fd02-ba68-42e1-b629-db466d407606",
+		"name": "E1240 Function",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Pins Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"0\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": false\r\n    },\r\n    \"1\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/save-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"save-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"0\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": false\r\n    },\r\n    \"1\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data Single Pin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"0\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": false\r\n    },\r\n    \"1\":{\r\n        \"min\": 0,\r\n        \"max\": 100,\r\n        \"active\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get-data/:pin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get-data",
+						":pin"
+					],
+					"variable": [
+						{
+							"key": "pin",
+							"value": "0",
+							"description": "from 0 to 7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "data": {
+    "0": {
+      "min": 0,
+      "max": 100,
+      "active": false
+    },
+    "1": {
+      "min": 0,
+      "max": 100,
+      "active": true
+    }
+  }
+}

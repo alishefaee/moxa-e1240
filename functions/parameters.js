@@ -1,7 +1,7 @@
 const {catchAsync} = require("./functions.js");
 const nconf = require("nconf")
 
-exports.readData = catchAsync(async (resolve, reject, client) => {
+exports.readAllData = catchAsync(async (resolve, reject, client) => {
     let resp = await client.readInputRegisters(8, 32).catch(err => {
         console.log(err)
     })
@@ -18,6 +18,28 @@ exports.readData = catchAsync(async (resolve, reject, client) => {
             result.push({pin:key, value:value.toFixed(1)})
         }
     }
+
+    resolve(result)
+
+})
+
+exports.readPinData = catchAsync(async (resolve, reject, client,pinNum) => {
+    let resp = await client.readInputRegisters(8, 32).catch(err => {
+        console.log(err)
+    })
+
+    let data = nconf.get('data')
+    let result
+
+        if (data[pinNum].active){
+            let value = convertData(resp, {
+                pin: Number(data[pinNum]), // A0 ...
+                min: data[pinNum].min,
+                max: data[pinNum].max,
+            })
+            result = {pin:pinNum, value:value.toFixed(1)}
+        }
+
 
     resolve(result)
 
